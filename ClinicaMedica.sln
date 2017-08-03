@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation", "1 - Presentation", "{03450373-B01F-45C4-A924-1546825E193F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Services", "2 - Services", "{50A103E6-B0E7-480D-AA45-172FF71ACCB3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{B65023F3-981D-45DE-92B5-B7C6E29F9D72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{FE89A2BC-919F-4A24-A487-150F89B2E9F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{BA1BB1D7-AD9C-4AA2-902B-14542C93DD2C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{70BB3C1D-0AE0-4B37-AB13-02271E1A0754}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2 - CrossCutting", "5.2 - CrossCutting", "{D165B880-5A63-468A-A356-3619562BEA3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LR.ClinicaMedica.Domain", "src\LR.ClinicaMedica.Domain\LR.ClinicaMedica.Domain.csproj", "{5C2E15E7-D325-4825-B6E3-F53713A57F51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LR.ClinicaMedica.Infra.Data", "src\LR.ClinicaMedica.Infra.Data\LR.ClinicaMedica.Infra.Data.csproj", "{0E2BB995-DAD1-4D3C-9115-E3C060919074}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LR.ClinicaMedica.UI.Site", "src\LR.ClinicaMedica.UI.Site\LR.ClinicaMedica.UI.Site.csproj", "{0AAF27E1-7FA0-44F0-8BC1-D8A2303B05B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LR.ClinicaMedica.Application", "src\LR.ClinicaMedica.Application\LR.ClinicaMedica.Application.csproj", "{B0456CD5-21D5-4AFA-8564-3BC70B5578DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C2E15E7-D325-4825-B6E3-F53713A57F51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2E15E7-D325-4825-B6E3-F53713A57F51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2E15E7-D325-4825-B6E3-F53713A57F51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2E15E7-D325-4825-B6E3-F53713A57F51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E2BB995-DAD1-4D3C-9115-E3C060919074}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E2BB995-DAD1-4D3C-9115-E3C060919074}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E2BB995-DAD1-4D3C-9115-E3C060919074}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E2BB995-DAD1-4D3C-9115-E3C060919074}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AAF27E1-7FA0-44F0-8BC1-D8A2303B05B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AAF27E1-7FA0-44F0-8BC1-D8A2303B05B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AAF27E1-7FA0-44F0-8BC1-D8A2303B05B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AAF27E1-7FA0-44F0-8BC1-D8A2303B05B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0456CD5-21D5-4AFA-8564-3BC70B5578DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0456CD5-21D5-4AFA-8564-3BC70B5578DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0456CD5-21D5-4AFA-8564-3BC70B5578DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0456CD5-21D5-4AFA-8564-3BC70B5578DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{70BB3C1D-0AE0-4B37-AB13-02271E1A0754} = {BA1BB1D7-AD9C-4AA2-902B-14542C93DD2C}
+		{D165B880-5A63-468A-A356-3619562BEA3F} = {BA1BB1D7-AD9C-4AA2-902B-14542C93DD2C}
+		{5C2E15E7-D325-4825-B6E3-F53713A57F51} = {FE89A2BC-919F-4A24-A487-150F89B2E9F9}
+		{0E2BB995-DAD1-4D3C-9115-E3C060919074} = {70BB3C1D-0AE0-4B37-AB13-02271E1A0754}
+		{0AAF27E1-7FA0-44F0-8BC1-D8A2303B05B1} = {03450373-B01F-45C4-A924-1546825E193F}
+		{B0456CD5-21D5-4AFA-8564-3BC70B5578DF} = {B65023F3-981D-45DE-92B5-B7C6E29F9D72}
+	EndGlobalSection
+EndGlobal
