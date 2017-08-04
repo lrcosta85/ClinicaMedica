@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using LR.ClinicaMedica.Application.ViewModels;
 using LR.ClinicaMedica.Domain.Interfaces.Repository;
 using LR.ClinicaMedica.Infra.Data.Repository;
+using AutoMapper;
+using LR.ClinicaMedica.Domain.Models;
 
 namespace LR.ClinicaMedica.Application.Services
 {
@@ -21,39 +23,49 @@ namespace LR.ClinicaMedica.Application.Services
 
         public PacienteAgendaViewModel Adicionar(PacienteAgendaViewModel pacienteAgendaViewModel)
         {
-            //pacienteAgendaViewModel >> paciente
+            var paciente = Mapper.Map<Paciente>(pacienteAgendaViewModel.PacienteViewModel);
+            var agenda = Mapper.Map<Agenda>(pacienteAgendaViewModel.AgendaViewModel);
 
-            //return _pacienteRepository.Adicionar
+            paciente.Agendas.Add(agenda);
+            paciente.DataCadastro = DateTime.Now;
+
+            _pacienteRepository.Adicionar(paciente);
+
+            return pacienteAgendaViewModel;
         }
 
         public PacienteViewModel Atualizar(PacienteViewModel pacienteViewModel)
         {
-            throw new NotImplementedException();
+            var paciente = Mapper.Map<Paciente>(pacienteViewModel);
+
+            _pacienteRepository.Atualizar(paciente);
+
+            return pacienteViewModel;
         }
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _pacienteRepository.Dispose();
         }
 
         public PacienteViewModel ObterPorCPF(string cpf)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<PacienteViewModel>(_pacienteRepository.ObterPorCPF(cpf));
         }
 
         public PacienteViewModel ObterPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return Mapper.Map<PacienteViewModel>(_pacienteRepository.ObterPorID(id));
         }
 
         public IEnumerable<PacienteViewModel> ObterTodos()
         {
-            throw new NotImplementedException();
+            return Mapper.Map<IEnumerable<PacienteViewModel>>(_pacienteRepository.ObterTodos());
         }
 
         public void Remover(Guid id)
         {
-            throw new NotImplementedException();
+            _pacienteRepository.Remover(id);
         }
     }
 }

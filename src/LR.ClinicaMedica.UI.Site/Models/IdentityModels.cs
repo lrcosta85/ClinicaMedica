@@ -18,16 +18,18 @@ namespace LR.ClinicaMedica.UI.Site.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class IPacienteClientService : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+        public IPacienteClientService()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static IPacienteClientService Create()
         {
-            return new ApplicationDbContext();
+            return new IPacienteClientService();
         }
+
+       
     }
 }
