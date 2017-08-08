@@ -1,5 +1,11 @@
 ﻿@model LR.ClinicaMedica.Application.ViewModels.AgendaViewModel
 
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
@@ -8,7 +14,6 @@
         <h4>AgendaViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
         <div class="form-group">
             @Html.LabelFor(model => model.PacienteID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

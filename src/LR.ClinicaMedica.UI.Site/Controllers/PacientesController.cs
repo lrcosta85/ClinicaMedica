@@ -54,15 +54,15 @@ namespace LR.ClinicaMedica.UI.Site.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(PacienteAgendaViewModel pacienteAgendaViewModel)
+        public ActionResult Create(PacienteViewModel pacienteViewModel)
         {
             if (ModelState.IsValid)
             {
-                _pacienteAppService.Adicionar(pacienteAgendaViewModel);
-                return RedirectToAction("Index");
+                _pacienteAppService.Adicionar(pacienteViewModel);
+                return RedirectToAction("Create", "Agendas");
             }
 
-            return View(pacienteAgendaViewModel);
+            return View(pacienteViewModel);
         }
 
         // GET: Pacientes/Edit/5

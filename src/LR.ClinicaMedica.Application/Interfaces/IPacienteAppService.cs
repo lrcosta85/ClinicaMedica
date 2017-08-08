@@ -9,7 +9,7 @@ namespace LR.ClinicaMedica.Application.Interfaces
 {
     public interface IPacienteAppService : IDisposable
     {
-        PacienteAgendaViewModel Adicionar(PacienteAgendaViewModel pacienteAgendaViewModel);
+        PacienteViewModel Adicionar(PacienteViewModel pacienteAgendaViewModel);
         PacienteViewModel ObterPorId(Guid id);
         IEnumerable<PacienteViewModel> ObterTodos();
         PacienteViewModel ObterPorCPF(string cpf);

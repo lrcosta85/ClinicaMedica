@@ -30,6 +30,21 @@ namespace LR.ClinicaMedica.UI.Site.Models
             return new IPacienteClientService();
         }
 
-       
+        
+    }
+
+    public class IAgendaClientService : IdentityDbContext<ApplicationUser>
+    {
+        public IAgendaClientService()
+            : base("DefaultConnection", throwIfV1Schema: false)
+        {
+        }
+
+        public static IAgendaClientService Create()
+        {
+            return new IAgendaClientService();
+        }
+
+
     }
 }

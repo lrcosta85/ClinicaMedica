@@ -33,6 +33,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\Repository\IAgendaRepository.cs" />
     <Compile Include="Interfaces\Repository\IPacienteRepository.cs" />
     <Compile Include="Interfaces\Repository\IRepository.cs" />
     <Compile Include="Models\Agenda.cs" />

@@ -1,9 +1,6 @@
 ﻿using LR.ClinicaMedica.Application.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using LR.ClinicaMedica.Application.ViewModels;
 using LR.ClinicaMedica.Domain.Interfaces.Repository;
 using LR.ClinicaMedica.Infra.Data.Repository;
@@ -21,17 +18,17 @@ namespace LR.ClinicaMedica.Application.Services
             _pacienteRepository = new PacienteRepository();
         }
 
-        public PacienteAgendaViewModel Adicionar(PacienteAgendaViewModel pacienteAgendaViewModel)
+        public PacienteViewModel Adicionar(PacienteViewModel pacienteViewModel)
         {
-            var paciente = Mapper.Map<Paciente>(pacienteAgendaViewModel.PacienteViewModel);
-            var agenda = Mapper.Map<Agenda>(pacienteAgendaViewModel.AgendaViewModel);
+            var paciente = Mapper.Map<Paciente>(pacienteViewModel);
+            //var agenda = Mapper.Map<Agenda>(pacienteAgendaViewModel.AgendaViewModel);
 
-            paciente.Agendas.Add(agenda);
+            //paciente.Agendas.Add(agenda);
             paciente.DataCadastro = DateTime.Now;
 
             _pacienteRepository.Adicionar(paciente);
 
-            return pacienteAgendaViewModel;
+            return pacienteViewModel;
         }
 
         public PacienteViewModel Atualizar(PacienteViewModel pacienteViewModel)

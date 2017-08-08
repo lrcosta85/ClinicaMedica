@@ -54,6 +54,7 @@
     <Compile Include="EntityConfig\PacienteConfig.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AgendaRepository.cs" />
     <Compile Include="Repository\PacienteRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
