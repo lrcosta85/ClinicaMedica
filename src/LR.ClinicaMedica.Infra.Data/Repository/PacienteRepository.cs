@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
+using Dapper;
 
 namespace LR.ClinicaMedica.Infra.Data.Repository
 {
@@ -13,7 +14,11 @@ namespace LR.ClinicaMedica.Infra.Data.Repository
     {
         public Paciente ObterPorCPF(string CPF)
         {
-            return Buscar(p => p.CPF == CPF).FirstOrDefault();
+            //utilizando Dapper
+            var sql = string.Format("SELECT * FROM Pacientes where cpf = '{0}'", CPF);
+
+            return Db.Database.Connection.Query<Paciente>(sql).FirstOrDefault();
+            //return Buscar(p => p.CPF == CPF).FirstOrDefault();
         }
     }
 }
