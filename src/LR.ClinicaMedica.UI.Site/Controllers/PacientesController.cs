@@ -12,6 +12,7 @@ using LR.ClinicaMedica.Application.Services;
 
 namespace LR.ClinicaMedica.UI.Site.Controllers
 {
+    //[RoutePrefix("Cadastro")]
     public class PacientesController : Controller
     {
         private readonly IPacienteAppService _pacienteAppService;
@@ -21,6 +22,7 @@ namespace LR.ClinicaMedica.UI.Site.Controllers
             _pacienteAppService = new PacienteAppService();
         }
 
+        //[Route("Listar-Todos")]
         // GET: Pacientes
         public ActionResult Index()
         {
