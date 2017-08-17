@@ -9,9 +9,12 @@ using System.Web.Mvc;
 using LR.ClinicaMedica.Application.ViewModels;
 using LR.ClinicaMedica.Application.Interfaces;
 using LR.ClinicaMedica.Application.Services;
+using LR.ClinicaMedica.UI.Site.Filters;
 
 namespace LR.ClinicaMedica.UI.Site.Controllers
 {
+    //criar permissoes para cada método
+    [Authorize]
     //[RoutePrefix("Cadastro")]
     public class PacientesController : Controller
     {
@@ -24,6 +27,7 @@ namespace LR.ClinicaMedica.UI.Site.Controllers
 
         //[Route("Listar-Todos")]
         // GET: Pacientes
+        [ClaimsAuthorize("Paciente","LT")]
         public ActionResult Index()
         {
             return View(_pacienteAppService.ObterTodos());
@@ -98,6 +102,7 @@ namespace LR.ClinicaMedica.UI.Site.Controllers
             return View(pacienteViewModel);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Pacientes/Delete/5
         public ActionResult Delete(Guid? id)
         {
@@ -115,6 +120,7 @@ namespace LR.ClinicaMedica.UI.Site.Controllers
             return View(pacienteViewModel);
         }
 
+        
         // POST: Pacientes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
