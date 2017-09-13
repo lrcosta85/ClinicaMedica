@@ -6,16 +6,17 @@ using LR.ClinicaMedica.Domain.Interfaces.Repository;
 using LR.ClinicaMedica.Infra.Data.Repository;
 using AutoMapper;
 using LR.ClinicaMedica.Domain.Models;
+using LR.ClinicaMedica.Domain.Interfaces.Services;
 
 namespace LR.ClinicaMedica.Application.Services
 {
     public class PacienteAppService : IPacienteAppService
     {
-        private readonly IPacienteRepository _pacienteRepository;
+        private readonly IPacienteService _pacienteService;
 
-        public PacienteAppService()
+        public PacienteAppService(IPacienteService pacienteService)
         {
-            _pacienteRepository = new PacienteRepository();
+            _pacienteService = pacienteService;
         }
 
         public PacienteViewModel Adicionar(PacienteViewModel pacienteViewModel)
@@ -26,7 +27,7 @@ namespace LR.ClinicaMedica.Application.Services
             //paciente.Agendas.Add(agenda);
             paciente.DataCadastro = DateTime.Now;
 
-            _pacienteRepository.Adicionar(paciente);
+            _pacienteService.Adicionar(paciente);
 
             return pacienteViewModel;
         }
@@ -35,34 +36,34 @@ namespace LR.ClinicaMedica.Application.Services
         {
             var paciente = Mapper.Map<Paciente>(pacienteViewModel);
 
-            _pacienteRepository.Atualizar(paciente);
+            _pacienteService.Atualizar(paciente);
 
             return pacienteViewModel;
         }
 
         public void Dispose()
         {
-            _pacienteRepository.Dispose();
+            _pacienteService.Dispose();
         }
 
         public PacienteViewModel ObterPorCPF(string cpf)
         {
-            return Mapper.Map<PacienteViewModel>(_pacienteRepository.ObterPorCPF(cpf));
+            return Mapper.Map<PacienteViewModel>(_pacienteService.ObterPorCPF(cpf));
         }
 
         public PacienteViewModel ObterPorId(Guid id)
         {
-            return Mapper.Map<PacienteViewModel>(_pacienteRepository.ObterPorID(id));
+            return Mapper.Map<PacienteViewModel>(_pacienteService.ObterPorID(id));
         }
 
         public IEnumerable<PacienteViewModel> ObterTodos()
         {
-            return Mapper.Map<IEnumerable<PacienteViewModel>>(_pacienteRepository.ObterTodos());
+            return Mapper.Map<IEnumerable<PacienteViewModel>>(_pacienteService.ObterTodos());
         }
 
         public void Remover(Guid id)
         {
-            _pacienteRepository.Remover(id);
+            _pacienteService.Remover(id);
         }
     }
 }

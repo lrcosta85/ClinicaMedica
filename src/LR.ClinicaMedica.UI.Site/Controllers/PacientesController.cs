@@ -20,9 +20,9 @@ namespace LR.ClinicaMedica.UI.Site.Controllers
     {
         private readonly IPacienteAppService _pacienteAppService;
 
-        public PacientesController()
+        public PacientesController(IPacienteAppService pacienteAppService)
         {
-            _pacienteAppService = new PacienteAppService();
+            _pacienteAppService = pacienteAppService;
         }
 
         //[Route("Listar-Todos")]
