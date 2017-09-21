@@ -8,7 +8,8 @@ namespace LR.ClinicaMedica.UI.Site.App_Start
     using SimpleInjector;
     using SimpleInjector.Integration.Web;
     using SimpleInjector.Integration.Web.Mvc;
-    
+    using CrossCutting.IoC;
+
     public static class SimpleInjectorInitializer
     {
         /// <summary>Initialize the container and register it as MVC3 Dependency Resolver.</summary>
@@ -28,6 +29,7 @@ namespace LR.ClinicaMedica.UI.Site.App_Start
      
         private static void InitializeContainer(Container container)
         {
+            BootStrapper.Register(container);
             // For instance:
             //container.Register<IUserRepository, SqlUserRepository>(Lifestyle.Scoped);
         }

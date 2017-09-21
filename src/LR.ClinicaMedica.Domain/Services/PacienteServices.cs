@@ -19,6 +19,10 @@ namespace LR.ClinicaMedica.Domain.Services
         }
         public Paciente Adicionar(Paciente paciente)
         {
+            if (!paciente.EhValido())
+            {
+                return paciente;
+            }
             return _pacienteRepository.Adicionar(paciente);
         }
 

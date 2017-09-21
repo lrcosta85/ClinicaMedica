@@ -27,7 +27,14 @@ namespace LR.ClinicaMedica.Application.Services
             //paciente.Agendas.Add(agenda);
             paciente.DataCadastro = DateTime.Now;
 
-            _pacienteService.Adicionar(paciente);
+            var pacienteReturn =  _pacienteService.Adicionar(paciente);
+
+            if (pacienteReturn.ValidationResult.IsValid)
+            {
+                //to do
+            }
+
+            pacienteViewModel = Mapper.Map<PacienteViewModel>(pacienteReturn);
 
             return pacienteViewModel;
         }

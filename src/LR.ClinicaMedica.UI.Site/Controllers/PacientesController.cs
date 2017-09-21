@@ -64,6 +64,17 @@ namespace LR.ClinicaMedica.UI.Site.Controllers
         {
             if (ModelState.IsValid)
             {
+                pacienteViewModel = _pacienteAppService.Adicionar(pacienteViewModel);
+
+                if (pacienteViewModel.ValidationResult.IsValid)
+                {
+                    foreach (var error in pacienteViewModel.ValidationResult.Erros)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Message);
+                    }
+                    return View(pacienteViewModel);
+                }
+
                 _pacienteAppService.Adicionar(pacienteViewModel);
                 return RedirectToAction("Create", "Agendas");
             }

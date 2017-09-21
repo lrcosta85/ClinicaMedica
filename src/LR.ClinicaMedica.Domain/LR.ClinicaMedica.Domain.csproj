@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DomainValidation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DomainValidation.1.0.0\lib\net451\DomainValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
@@ -42,8 +46,15 @@
     <Compile Include="Models\Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\PacienteServices.cs" />
+    <Compile Include="Specification\Pacientes\PacienteDeveTerCPFValidoSpecification.cs" />
+    <Compile Include="Specification\Pacientes\PacienteDeveTerEmailValidoSpecification.cs" />
+    <Compile Include="Validation\CPFValidation.cs" />
+    <Compile Include="Validation\EmailValidation.cs" />
+    <Compile Include="Validation\Pacientes\PacienteEstaConsistenyteValidation.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

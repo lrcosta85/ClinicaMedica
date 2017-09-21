@@ -20,12 +20,6 @@ namespace LR.ClinicaMedica.UI.Site.Controllers
         {
         }
 
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
-
         public ApplicationSignInManager SignInManager
         {
             get

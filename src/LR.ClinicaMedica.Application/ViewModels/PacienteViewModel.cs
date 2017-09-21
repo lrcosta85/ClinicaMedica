@@ -41,6 +41,8 @@ namespace LR.ClinicaMedica.Application.ViewModels
         public string Convenio { get; set; }
         public DateTime DataCadastro { get; set; }
 
+        public DomainValidation.Validation.ValidationResult ValidationResult { get; set; }
+
         public ICollection<AgendaViewModel> Agendas { get; set; }
 
     }

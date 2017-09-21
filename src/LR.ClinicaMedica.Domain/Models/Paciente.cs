@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DomainValidation.Validation;
+using LR.ClinicaMedica.Domain.Validation.Pacientes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,6 +32,13 @@ namespace LR.ClinicaMedica.Domain.Models
         public string Email { get; set; }
         public string Convenio { get; set; }
         public DateTime DataCadastro { get; set; }
+        public ValidationResult ValidationResult { get; set; }
+
+        public bool EhValido()
+        {
+            ValidationResult = new PacienteEstaConsistenyteValidation().Validate(this);
+            return ValidationResult.IsValid;
+        }
 
         public virtual ICollection<Agenda> Agendas { get; set; }
 

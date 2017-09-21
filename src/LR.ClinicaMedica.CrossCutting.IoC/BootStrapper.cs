@@ -18,11 +18,11 @@ namespace LR.ClinicaMedica.CrossCutting.IoC
         public static void Register(Container container)
         {
             //APP
-            container.Register<IPacienteAppService, PacienteAppService>();
+            container.Register<IPacienteAppService, PacienteAppService>(Lifestyle.Scoped);
             //Domain
-            container.Register<IPacienteService, PacienteServices>();
+            container.Register<IPacienteService, PacienteServices>(Lifestyle.Scoped);
             //Dados
-            container.Register<IPacienteRepository, PacienteRepository>();
+            container.Register<IPacienteRepository, PacienteRepository>(Lifestyle.Scoped);
         }
     }
 }
