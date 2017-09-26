@@ -12,6 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{FE89A2BC-919F-4A24-A487-150F89B2E9F9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Infra", "5 - Infra", "{BA1BB1D7-AD9C-4AA2-902B-14542C93DD2C}"
+	ProjectSection(SolutionItems) = preProject
+		src\LR.ClinicaMedica.Domain\packages.config = src\LR.ClinicaMedica.Domain\packages.config
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", "{70BB3C1D-0AE0-4B37-AB13-02271E1A0754}"
 EndProject

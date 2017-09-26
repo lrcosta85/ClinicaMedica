@@ -72,6 +72,8 @@ namespace LR.ClinicaMedica.Infra.Data.EntityConfig
             Property(p => p.Estado)
                 .HasMaxLength(2);
 
+            Ignore(p => p.ValidationResult);
+
             ToTable("Pacientes");
 
         }

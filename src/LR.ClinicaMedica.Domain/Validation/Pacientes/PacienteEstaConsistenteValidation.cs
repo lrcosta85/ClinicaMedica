@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace LR.ClinicaMedica.Domain.Validation.Pacientes
 {
-    public class PacienteEstaConsistenyteValidation : Validator<Paciente>
+    public class PacienteEstaConsistenteValidation : Validator<Paciente>
     {
-        public PacienteEstaConsistenyteValidation()
+        public PacienteEstaConsistenteValidation()
         {
             var cpfPaciente = new PacienteDeveTerCPFValidoSpecification();
 

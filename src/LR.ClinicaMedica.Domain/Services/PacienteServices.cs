@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LR.ClinicaMedica.Domain.Models;
 using LR.ClinicaMedica.Domain.Interfaces.Repository;
+using LR.ClinicaMedica.Domain.Validation.Pacientes;
 
 namespace LR.ClinicaMedica.Domain.Services
 {
@@ -23,7 +24,11 @@ namespace LR.ClinicaMedica.Domain.Services
             {
                 return paciente;
             }
-            return _pacienteRepository.Adicionar(paciente);
+
+            paciente.ValidationResult = new PacienteAptoParaCadastroValidation(_pacienteRepository).Validate(paciente);
+
+
+            return !paciente.ValidationResult.IsValid ? paciente : _pacienteRepository.Adicionar(paciente);
         }
 
         public Paciente Atualizar(Paciente paciente)

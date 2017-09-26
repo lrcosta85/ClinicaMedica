@@ -36,7 +36,7 @@ namespace LR.ClinicaMedica.Domain.Models
 
         public bool EhValido()
         {
-            ValidationResult = new PacienteEstaConsistenyteValidation().Validate(this);
+            ValidationResult = new PacienteEstaConsistenteValidation().Validate(this);
             return ValidationResult.IsValid;
         }
 
