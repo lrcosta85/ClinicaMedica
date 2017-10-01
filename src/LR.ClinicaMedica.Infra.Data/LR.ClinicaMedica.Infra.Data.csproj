@@ -60,7 +60,9 @@
     <Compile Include="Context\ClinicaMedicaContext.cs" />
     <Compile Include="EntityConfig\AgendaConfig.cs" />
     <Compile Include="EntityConfig\PacienteConfig.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="OoW\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AgendaRepository.cs" />
     <Compile Include="Repository\PacienteRepository.cs" />

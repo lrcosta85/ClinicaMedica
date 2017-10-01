@@ -3,6 +3,9 @@ using LR.ClinicaMedica.Application.Services;
 using LR.ClinicaMedica.Domain.Interfaces.Repository;
 using LR.ClinicaMedica.Domain.Interfaces.Services;
 using LR.ClinicaMedica.Domain.Services;
+using LR.ClinicaMedica.Infra.Data.Context;
+using LR.ClinicaMedica.Infra.Data.Interfaces;
+using LR.ClinicaMedica.Infra.Data.OoW;
 using LR.ClinicaMedica.Infra.Data.Repository;
 using SimpleInjector;
 using System;
@@ -23,6 +26,10 @@ namespace LR.ClinicaMedica.CrossCutting.IoC
             container.Register<IPacienteService, PacienteServices>(Lifestyle.Scoped);
             //Dados
             container.Register<IPacienteRepository, PacienteRepository>(Lifestyle.Scoped);
+
+            container.Register<IUnitOfWork, UnitOfWork>(Lifestyle.Scoped);
+            container.Register<ClinicaMedicaContext>(Lifestyle.Scoped);
+
         }
     }
 }

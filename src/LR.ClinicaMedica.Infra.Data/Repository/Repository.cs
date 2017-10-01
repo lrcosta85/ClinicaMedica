@@ -16,9 +16,9 @@ namespace LR.ClinicaMedica.Infra.Data.Repository
         protected ClinicaMedicaContext Db;
         protected DbSet<tEntity> DbSet;
 
-        protected Repository()
+        protected Repository(ClinicaMedicaContext context)
         {
-            Db = new ClinicaMedicaContext();
+            Db = context;
             DbSet = Db.Set<tEntity>();
         }
 
@@ -35,7 +35,7 @@ namespace LR.ClinicaMedica.Infra.Data.Repository
             DbSet.Attach(obj);
             entry.State = EntityState.Modified;
 
-            SaveChanges();
+            //SaveChanges();
 
             return obj;
         }
@@ -67,7 +67,7 @@ namespace LR.ClinicaMedica.Infra.Data.Repository
 
 
             DbSet.Remove(obj);
-            SaveChanges();
+            //SaveChanges();
         }
 
         public int SaveChanges()

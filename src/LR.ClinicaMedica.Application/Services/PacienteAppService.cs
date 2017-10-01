@@ -7,6 +7,7 @@ using LR.ClinicaMedica.Infra.Data.Repository;
 using AutoMapper;
 using LR.ClinicaMedica.Domain.Models;
 using LR.ClinicaMedica.Domain.Interfaces.Services;
+using LR.ClinicaMedica.Infra.Data.Interfaces;
 
 namespace LR.ClinicaMedica.Application.Services
 {
@@ -14,9 +15,12 @@ namespace LR.ClinicaMedica.Application.Services
     {
         private readonly IPacienteService _pacienteService;
 
-        public PacienteAppService(IPacienteService pacienteService)
+        private readonly IUnitOfWork _uow;
+
+        public PacienteAppService(IPacienteService pacienteService, IUnitOfWork uow)
         {
             _pacienteService = pacienteService;
+            _uow = uow;
         }
 
         public PacienteViewModel Adicionar(PacienteViewModel pacienteViewModel)
@@ -31,7 +35,7 @@ namespace LR.ClinicaMedica.Application.Services
 
             if (pacienteReturn.ValidationResult.IsValid)
             {
-                //to do
+                _uow.Commit();
             }
 
             pacienteViewModel = Mapper.Map<PacienteViewModel>(pacienteReturn);
